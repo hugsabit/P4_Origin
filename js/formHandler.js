@@ -1,10 +1,10 @@
-$(function()
-{	
-	$("input,textarea").jqBootstrapValidation(
-    {
+$(function() {
+
+	$("input,textarea").jqBootstrapValidation( {
+
      	preventSubmit: true,
-     	submitSuccess: function($form, event)
-	 	{			
+     	submitSuccess: function($form, event){			
+
 			if(!$form.attr('action')) // Check form doesnt have action attribute
 			{
 				event.preventDefault(); // prevent default submit behaviour
@@ -42,7 +42,7 @@ $(function()
 		 			{  
 						if($form.is('[success-msg]')) // Show Success Message
 						{
-							$form.append("<div id='form-alert'><div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>"+$form.attr('success-msg')+"</strong></div></div>");
+							$form.append("<div id='form-alert'><div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>Votre message a été envoyé.</strong></div></div>");
 						}
 						else // Re-Direct
 						{
@@ -55,7 +55,7 @@ $(function()
 			   		{
 						if($('#form-alert').length == 0)
 						{
-							$form.append("<div id='form-alert'><div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>"+$form.attr('fail-msg')+"</strong></div></div>");
+							$form.append("<div id='form-alert'><div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>Désolé, il semble que notre serveur de messagerie ne réponde pas, Désolé pour le dérangement !</strong></div></div>");
 						}	
 			   		},
 		   		});
